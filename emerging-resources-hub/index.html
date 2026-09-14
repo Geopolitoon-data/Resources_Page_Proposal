@@ -1,0 +1,507 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<style>:root{color-scheme:light dark}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+</head>
+<body><title>Hub Ressources Emerging</title>
+<meta name="description" content="Bilingual mockup of the emerging.fr Resources hub: one filterable repository · Findings, Analyses, Articles and Widgets, built on millions of employability data points.">
+<style>
+  :root{
+    --bg:#eef1f6; --surface:#ffffff; --surface-2:#e9edf4; --line:#d7dee8;
+    --ink:#16213a; --text:#2c374a; --muted:#5f6c85; --accent:#1f5fd0; --accent-ink:#123f92;
+    --shadow:0 1px 2px rgba(22,33,58,.06),0 8px 24px rgba(22,33,58,.07);
+    --shadow-lift:0 2px 6px rgba(22,33,58,.10),0 18px 40px rgba(22,33,58,.13);
+    --finding-bg:#fbeecb; --finding-fg:#875600;
+    --analyse-bg:#e0e3fb; --analyse-fg:#2f38a6;
+    --article-bg:#fadfe4; --article-fg:#a5314e;
+    --widget-bg:#d9eddd; --widget-fg:#1c6a40;
+    --method-bg:#e3e7ef; --method-fg:#45526b;
+    --gate:#875600; --gate-bg:#fbeecb;
+  }
+  @media (prefers-color-scheme:dark){
+    :root:not([data-theme="light"]){
+      --bg:#0e1422; --surface:#161d2e; --surface-2:#1d2638; --line:#2a3346;
+      --ink:#eef2f8; --text:#c6cfdc; --muted:#8b97ab; --accent:#6b98ff; --accent-ink:#9db8ff;
+      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.35);
+      --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 20px 46px rgba(0,0,0,.5);
+      --finding-bg:#3a2f14; --finding-fg:#e8c274;
+      --analyse-bg:#1e2350; --analyse-fg:#adb7f6;
+      --article-bg:#3a1d27; --article-fg:#f2a8b9;
+      --widget-bg:#143020; --widget-fg:#8bdda7;
+      --method-bg:#232b3c; --method-fg:#b1bccd;
+      --gate:#e8c274; --gate-bg:#3a2f14;
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg:#0e1422; --surface:#161d2e; --surface-2:#1d2638; --line:#2a3346;
+    --ink:#eef2f8; --text:#c6cfdc; --muted:#8b97ab; --accent:#6b98ff; --accent-ink:#9db8ff;
+    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.35);
+    --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 20px 46px rgba(0,0,0,.5);
+    --finding-bg:#3a2f14; --finding-fg:#e8c274;
+    --analyse-bg:#1e2350; --analyse-fg:#adb7f6;
+    --article-bg:#3a1d27; --article-fg:#f2a8b9;
+    --widget-bg:#143020; --widget-fg:#8bdda7;
+    --method-bg:#232b3c; --method-fg:#b1bccd;
+    --gate:#e8c274; --gate-bg:#3a2f14;
+  }
+
+  *{box-sizing:border-box}
+  body{background:var(--bg); color:var(--text);
+    font-family:"Source Serif 4",Georgia,"Times New Roman",serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  h1,h2,h3,.ui{font-family:"Libre Franklin","Helvetica Neue",Arial,sans-serif}
+  h1,h2,h3{color:var(--ink); text-wrap:balance; line-height:1.15; margin:0}
+  a{color:inherit}
+  .wrap{max-width:1160px; margin:0 auto; padding:0 24px}
+  .eyebrow{font-family:"Libre Franklin",sans-serif; text-transform:uppercase; letter-spacing:.14em;
+    font-size:11.5px; font-weight:700; color:var(--muted)}
+  .num{font-variant-numeric:tabular-nums}
+
+  .memo-bar{background:var(--ink); color:#fff; font-family:"Libre Franklin",sans-serif; font-size:12.5px; letter-spacing:.02em}
+  :root[data-theme="dark"] .memo-bar,:root:not([data-theme="light"]) .memo-bar{background:#05070d}
+  .memo-bar .wrap{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:9px 24px; flex-wrap:wrap}
+  .memo-bar b{font-weight:700}
+  .memo-bar .tag{opacity:.7}
+
+  header.site{background:var(--surface); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
+  .site .wrap{display:flex; align-items:center; gap:24px; height:64px}
+  .logo{font-family:"Libre Franklin",sans-serif; font-weight:800; letter-spacing:-.01em; color:var(--ink); font-size:20px; display:flex; align-items:center; gap:9px}
+  .logo .dot{width:11px; height:11px; border-radius:50%; background:var(--accent); display:inline-block}
+  nav.main{display:flex; gap:22px; margin-left:6px}
+  nav.main a{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14.5px; color:var(--muted); text-decoration:none; padding:4px 0}
+  nav.main a.active{color:var(--ink); border-bottom:2px solid var(--accent)}
+  .spacer{flex:1}
+  .lang{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; font-family:"Libre Franklin",sans-serif}
+  .langbtn{border:0; background:var(--surface); color:var(--muted); font-weight:700; font-size:13px; padding:7px 12px; cursor:pointer}
+  .langbtn[aria-pressed="true"]{background:var(--accent); color:#fff}
+  .btn{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14px; border-radius:8px; padding:9px 16px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:7px}
+  .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
+  .btn.small{padding:6px 12px; font-size:13px}
+  a:focus-visible,button:focus-visible,input:focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:6px}
+
+  .hero{padding:52px 0 34px}
+  .hero .eyebrow{margin-bottom:14px}
+  .hero h1{font-size:clamp(40px,6vw,62px); font-weight:800; letter-spacing:-.02em}
+  .hero p.lede{font-size:19px; max-width:64ch; margin:16px 0 0; color:var(--text)}
+  .searchrow{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; align-items:center}
+  .search{flex:1; min-width:280px; display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:13px 16px; box-shadow:var(--shadow)}
+  .search input{border:0; background:transparent; font-size:16px; color:var(--ink); width:100%; font-family:inherit}
+  .search input::placeholder{color:var(--muted)}
+  .search svg{flex:0 0 auto; color:var(--muted)}
+
+  .chips{display:flex; gap:9px; flex-wrap:wrap; margin-top:20px; align-items:center}
+  .chips .lbl{font-family:"Libre Franklin",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-right:2px}
+  .chip{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:13.5px; cursor:pointer; border:1px solid var(--line); background:var(--surface); color:var(--text); padding:7px 13px; border-radius:999px; display:inline-flex; align-items:center; gap:7px}
+  .chip .swatch{width:9px; height:9px; border-radius:50%}
+  .chip[aria-pressed="true"]{border-color:var(--ink); color:var(--ink); background:var(--surface-2)}
+  .chip.all[aria-pressed="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
+
+  section{padding:38px 0}
+  .sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:22px}
+  .sec-head h2{font-size:26px; font-weight:800; letter-spacing:-.015em}
+  .sec-head p{margin:6px 0 0; color:var(--muted); font-size:15px}
+  .sec-head a.more{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14px; color:var(--accent-ink); text-decoration:none; white-space:nowrap}
+
+  .badge{font-family:"Libre Franklin",sans-serif; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:4px 9px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
+  .t-finding{background:var(--finding-bg); color:var(--finding-fg)}
+  .t-analyse{background:var(--analyse-bg); color:var(--analyse-fg)}
+  .t-article{background:var(--article-bg); color:var(--article-fg)}
+  .t-widget{background:var(--widget-bg); color:var(--widget-fg)}
+  .t-methodology{background:var(--method-bg); color:var(--method-fg)}
+
+  .feature-grid{display:grid; grid-template-columns:1.55fr 1fr; gap:18px}
+  .card{background:var(--surface); border:1px solid var(--line); border-radius:14px; box-shadow:var(--shadow); transition:transform .16s ease, box-shadow .16s ease; text-decoration:none; color:inherit; display:flex; flex-direction:column}
+  .card:hover{transform:translateY(-3px); box-shadow:var(--shadow-lift)}
+  .feat-main{padding:0; overflow:hidden}
+  .feat-main .band{height:150px; background:radial-gradient(120% 130% at 88% 10%, rgba(255,255,255,.16), transparent 55%),linear-gradient(120deg,var(--accent),var(--accent-ink)); position:relative}
+  .feat-main .band .mini{position:absolute; inset:auto 20px 18px 22px; display:flex; gap:6px; align-items:flex-end; height:74px}
+  .feat-main .band .mini i{flex:1; background:rgba(255,255,255,.85); border-radius:3px 3px 0 0; display:block}
+  .feat-main .body{padding:20px 22px 24px}
+  .feat-main h3{font-size:25px; font-weight:800; margin-top:12px; letter-spacing:-.01em}
+  .feat-main p{margin:9px 0 0; color:var(--text)}
+  .meta{font-family:"Libre Franklin",sans-serif; font-size:12.5px; color:var(--muted); margin-top:14px; display:flex; gap:12px; flex-wrap:wrap}
+  .side-col{display:grid; gap:18px}
+  .side-card{padding:18px 20px}
+  .side-card h3{font-size:17.5px; font-weight:700; margin-top:10px}
+  .side-card p{margin:7px 0 0; font-size:14.5px; color:var(--muted)}
+
+  .findings{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
+  .finding{background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--finding-fg); border-radius:12px; padding:17px 18px; box-shadow:var(--shadow)}
+  .finding .big{font-family:"Libre Franklin",sans-serif; font-weight:800; font-size:34px; color:var(--ink); letter-spacing:-.02em; line-height:1}
+  .finding p{margin:9px 0 0; font-size:14px; color:var(--text)}
+  .finding .src{margin-top:11px; font-family:"Libre Franklin",sans-serif; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
+
+  .index-layout{display:grid; grid-template-columns:236px 1fr; gap:28px; align-items:start}
+  .facets{position:sticky; top:80px; display:grid; gap:20px}
+  .facet h4{font-family:"Libre Franklin",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 10px; font-weight:700}
+  .facet label{display:flex; align-items:flex-start; gap:9px; font-size:14px; padding:4px 0; color:var(--text); cursor:pointer}
+  .facet input{accent-color:var(--accent); width:15px; height:15px; margin-top:4px}
+  .facet .count{margin-left:auto; font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; padding-left:8px}
+  .grid{display:grid; grid-template-columns:repeat(3,1fr); gap:16px; align-content:start}
+  .rcard{padding:17px 18px 18px; min-height:186px}
+  .rcard .top{display:flex; justify-content:space-between; align-items:center; gap:8px}
+  .rcard h3{font-size:17px; font-weight:700; margin-top:13px; line-height:1.25}
+  .rcard p{margin:8px 0 0; font-size:14px; color:var(--muted)}
+  .rcard .foot{margin-top:auto; padding-top:14px; font-family:"Libre Franklin",sans-serif; font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  .lock{font-family:"Libre Franklin",sans-serif; font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--gate); background:var(--gate-bg); padding:3px 8px; border-radius:5px; display:inline-flex; gap:5px; align-items:center}
+  .empty{grid-column:1/-1; text-align:center; color:var(--muted); padding:40px; font-family:"Libre Franklin",sans-serif}
+
+  .tools{padding:44px 0; background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
+  .toolgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
+  .tool{background:var(--surface); border:1px solid var(--line); border-radius:14px; overflow:hidden; box-shadow:var(--shadow); display:flex; flex-direction:column; transition:transform .16s ease, box-shadow .16s ease}
+  .tool:hover{transform:translateY(-3px); box-shadow:var(--shadow-lift)}
+  .tool .preview{height:132px; border-bottom:1px solid var(--line); padding:14px 16px; background:linear-gradient(180deg,var(--surface),var(--surface-2)); position:relative}
+  .tool .body{padding:16px 18px 18px}
+  .tool h3{font-size:17px; font-weight:700}
+  .tool p{margin:7px 0 0; font-size:14px; color:var(--muted)}
+  .tool .tags{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap}
+  .pill{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:11px; padding:4px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); display:inline-flex; align-items:center; gap:5px}
+  .pill.live{color:var(--widget-fg); background:var(--widget-bg); border-color:transparent}
+  .bars{display:flex; gap:7px; align-items:flex-end; height:100%}
+  .bars i{flex:1; background:linear-gradient(180deg,var(--accent),var(--accent-ink)); border-radius:3px 3px 0 0; opacity:.9}
+  .rows{display:grid; gap:7px}
+  .rows .r{display:flex; align-items:center; gap:8px; font-family:"Libre Franklin",sans-serif; font-size:11.5px; color:var(--muted)}
+  .rows .r b{color:var(--ink); font-variant-numeric:tabular-nums; width:16px}
+  .rows .r span{height:9px; border-radius:3px; background:var(--accent); display:block}
+  .radar{position:absolute; inset:0; display:flex; align-items:center; justify-content:center}
+
+  .prod-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
+  .prod{padding:26px; border-radius:16px; color:#fff; position:relative; overflow:hidden; text-decoration:none; display:block}
+  .prod.geurs{background:linear-gradient(135deg,#123f92,#1f5fd0)}
+  .prod.dl{background:linear-gradient(135deg,#0d5c4d,#12876f)}
+  .prod .eyebrow{color:rgba(255,255,255,.75)}
+  .prod h3{color:#fff; font-size:24px; font-weight:800; margin-top:10px}
+  .prod p{margin:9px 0 0; color:rgba(255,255,255,.9); font-size:15px; max-width:42ch}
+  .prod .filt{margin-top:18px; display:flex; gap:8px; flex-wrap:wrap}
+  .prod .filt span{font-family:"Libre Franklin",sans-serif; font-size:12px; background:rgba(255,255,255,.16); padding:5px 11px; border-radius:999px}
+
+  .client{background:var(--ink); color:#fff; border-radius:18px; padding:34px 36px; display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap}
+  :root[data-theme="dark"] .client,:root:not([data-theme="light"]) .client{border:1px solid var(--line)}
+  .client h2{color:#fff; font-size:24px; font-weight:800; max-width:28ch}
+  .client p{margin:9px 0 0; color:rgba(255,255,255,.8); max-width:52ch; font-size:15px}
+  .client .cta{display:flex; gap:12px; flex-wrap:wrap}
+  .client .btn{background:transparent; border-color:rgba(255,255,255,.35); color:#fff}
+  .client .btn.primary{background:#fff; color:var(--ink); border-color:#fff}
+
+  footer{padding:34px 0 60px; color:var(--muted); font-family:"Libre Franklin",sans-serif; font-size:13px}
+  footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:22px}
+  .legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px}
+  .legend .li{display:flex; align-items:center; gap:8px; font-family:"Libre Franklin",sans-serif; font-size:12.5px; color:var(--muted)}
+  .legend .sw{width:12px; height:12px; border-radius:3px}
+
+  @media(max-width:900px){
+    .feature-grid,.prod-grid{grid-template-columns:1fr}
+    .findings{grid-template-columns:repeat(2,1fr)}
+    .index-layout{grid-template-columns:1fr}
+    .facets{position:static; grid-auto-flow:column; grid-auto-columns:minmax(200px,max-content); overflow-x:auto; padding-bottom:8px}
+    .grid,.toolgrid{grid-template-columns:repeat(2,1fr)}
+    nav.main{display:none}
+  }
+  @media(max-width:600px){.findings,.grid,.toolgrid{grid-template-columns:1fr}}
+  @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style>
+
+<div class="memo-bar"><div class="wrap">
+  <span data-fr="Maquette · Hub Ressources emerging.fr · proposition d'architecture" data-en="Mockup · emerging.fr Resources Hub · proposed architecture"><b>Mockup · emerging.fr Resources Hub</b> · proposed architecture</span>
+  <span class="tag" data-fr="1 référentiel · 5 types · filtrage par facettes · widgets intégrés" data-en="1 repository · 5 types · faceted filtering · embedded widgets">1 repository · 5 types · faceted filtering · embedded widgets</span>
+</div></div>
+
+<header class="site"><div class="wrap">
+  <span class="logo"><span class="dot"></span>emerging</span>
+  <nav class="main">
+    <a href="#" data-fr="Classements" data-en="Rankings">Rankings</a>
+    <a href="#" data-fr="Solutions" data-en="Solutions">Solutions</a>
+    <a href="#" class="active" data-fr="Ressources" data-en="Resources">Resources</a>
+    <a href="#" data-fr="À propos" data-en="About">About</a>
+  </nav>
+  <span class="spacer"></span>
+  <span class="lang" role="group" aria-label="Language">
+    <button class="langbtn" data-lang="fr" aria-pressed="false">FR</button>
+    <button class="langbtn" data-lang="en" aria-pressed="true">EN</button>
+  </span>
+  <a href="#" class="btn small" data-fr="Espace client" data-en="Client area">Client area</a>
+  <a href="#" class="btn primary small" data-fr="Nous contacter" data-en="Contact us">Contact us</a>
+</div></header>
+
+<main>
+  <div class="wrap">
+    <div class="hero">
+      <div class="eyebrow" data-fr="Ressources · Recherche & données sur l'employabilité" data-en="Resources · Employability research & data">Resources · Employability research &amp; data</div>
+      <h1 data-fr="Le hub de la donnée employabilité." data-en="The employability data hub.">The employability data hub.</h1>
+      <p class="lede" data-fr="Bâti sur des millions de points de données · 200 000+ profils d'étudiants et 150 000 employeurs interrogés en 2026. Explorez les Findings, Analyses, Articles et Widgets d'Emerging sur l'employabilité des universités du monde entier, depuis un hub unique et filtrable." data-en="Built on millions of data points · 200,000+ student profiles and 150,000 employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.">Built on millions of data points · 200,000+ student profiles and 150,000 employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.</p>
+
+      <div class="searchrow">
+        <label class="search">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+          <input type="search" data-fr-ph="Rechercher une université, un secteur, une compétence, une édition…" data-en-ph="Search a university, sector, skill or edition…" placeholder="Search a university, sector, skill or edition…" aria-label="Search">
+        </label>
+        <a href="#index" class="btn" data-fr="Parcourir tout" data-en="Browse all">Browse all</a>
+      </div>
+
+      <div class="chips" id="typeChips" role="group" aria-label="Type">
+        <span class="lbl" data-fr="Type" data-en="Type">Type</span>
+        <button class="chip all" data-type="all" aria-pressed="true"><span data-fr="Tout" data-en="All">All</span></button>
+        <button class="chip" data-type="finding" aria-pressed="false"><span class="swatch" style="background:var(--finding-fg)"></span><span data-fr="Findings" data-en="Findings">Findings</span></button>
+        <button class="chip" data-type="analyse" aria-pressed="false"><span class="swatch" style="background:var(--analyse-fg)"></span><span data-fr="Analyses" data-en="Analyses">Analyses</span></button>
+        <button class="chip" data-type="article" aria-pressed="false"><span class="swatch" style="background:var(--article-fg)"></span><span data-fr="Articles" data-en="Articles">Articles</span></button>
+        <button class="chip" data-type="widget" aria-pressed="false"><span class="swatch" style="background:var(--widget-fg)"></span><span data-fr="Widgets" data-en="Widgets">Widgets</span></button>
+        <button class="chip" data-type="methodology" aria-pressed="false"><span class="swatch" style="background:var(--method-fg)"></span><span data-fr="Méthodologie" data-en="Methodology">Methodology</span></button>
+      </div>
+    </div>
+  </div>
+
+  <!-- FEATURED -->
+  <div class="wrap">
+    <section style="padding-top:8px">
+      <div class="sec-head">
+        <div><div class="eyebrow" data-fr="À la une" data-en="Featured">Featured</div><h2 style="margin-top:8px" data-fr="Sélection éditoriale" data-en="Editorial selection">Editorial selection</h2></div>
+      </div>
+      <div class="feature-grid">
+        <a class="card feat-main" href="#">
+          <div class="band"><div class="mini"><i style="height:38%"></i><i style="height:56%"></i><i style="height:44%"></i><i style="height:72%"></i><i style="height:60%"></i><i style="height:88%"></i><i style="height:70%"></i><i style="height:100%"></i></div></div>
+          <div class="body">
+            <span class="badge t-analyse" data-fr="Analyse" data-en="Analysis">Analysis</span>
+            <h3 data-fr="GEURS 2026 : le classement mondial de l'employabilité" data-en="GEURS 2026: the global employability ranking">GEURS 2026: the global employability ranking</h3>
+            <p data-fr="Les 250 universités les mieux notées par les recruteurs internationaux, et les 6 tendances qui redessinent la valeur d'un diplôme sur le marché du travail." data-en="The 250 universities rated highest by international recruiters, and the 6 trends reshaping the value of a degree on the job market.">The 250 universities rated highest by international recruiters, and the 6 trends reshaping the value of a degree on the job market.</p>
+            <div class="meta">
+              <span data-fr="Édition 2026" data-en="2026 edition">2026 edition</span>
+              <span data-fr="Monde" data-en="World">World</span>
+              <span data-fr="Rapport + PDF" data-en="Report + PDF">Report + PDF</span>
+              <span data-fr="12 min de lecture" data-en="12 min read">12 min read</span>
+            </div>
+          </div>
+        </a>
+        <div class="side-col">
+          <a class="card side-card" href="#">
+            <span class="badge t-widget" data-fr="Widget" data-en="Widget">Widget</span>
+            <h3 data-fr="Explorateur de classement GEURS" data-en="GEURS ranking explorer">GEURS ranking explorer</h3>
+            <p data-fr="Filtrez les 250 universités par pays, secteur et compétence · en direct." data-en="Filter the 250 universities by country, sector and skill · live.">Filter the 250 universities by country, sector and skill · live.</p>
+          </a>
+          <a class="card side-card" href="#">
+            <span class="badge t-article" data-fr="Article" data-en="Article">Article</span>
+            <h3 data-fr="Digital Leaders : qui progresse en IA cette année ?" data-en="Digital Leaders: who's rising in AI this year?">Digital Leaders: who's rising in AI this year?</h3>
+            <p data-fr="Les mouvements marquants du Top 150 des universités tech." data-en="The standout moves in the Top 150 tech universities.">The standout moves in the Top 150 tech universities.</p>
+          </a>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- FINDINGS -->
+  <div class="wrap">
+    <section>
+      <div class="sec-head">
+        <div><div class="eyebrow" data-fr="Findings · les chiffres-clés" data-en="Findings · the key figures">Findings · the key figures</div>
+          <h2 style="margin-top:8px" data-fr="Ce que disent les recruteurs" data-en="What recruiters say">What recruiters say</h2>
+          <p data-fr="Résultats atomiques, extraits des enquêtes · pensés pour être cités et partagés." data-en="Atomic results pulled from the surveys · made to be quoted and shared.">Atomic results pulled from the surveys · made to be quoted and shared.</p></div>
+        <a class="more" href="#" data-fr="Tous les Findings →" data-en="All Findings →">All Findings →</a>
+      </div>
+      <div class="findings">
+        <div class="finding"><div class="big num">73%</div><p data-fr="des recruteurs internationaux jugent les compétences IA décisives à l'embauche." data-en="of international recruiters see AI skills as decisive when hiring.">of international recruiters see AI skills as decisive when hiring.</p><div class="src">GEURS 2026</div></div>
+        <div class="finding"><div class="big num">+18</div><p data-fr="places : la plus forte progression du Top 150 Digital Leaders cette année." data-en="places: the biggest climb in the Digital Leaders Top 150 this year.">places: the biggest climb in the Digital Leaders Top 150 this year.</p><div class="src">Digital Leaders</div></div>
+        <div class="finding"><div class="big num">150k</div><p data-fr="employeurs interrogés en 2026, dans plus de 20 pays." data-en="employers surveyed in 2026, across 20+ countries.">employers surveyed in 2026, across 20+ countries.</p><div class="src" data-fr="Enquête annuelle" data-en="Annual survey">Annual survey</div></div>
+        <div class="finding"><div class="big num">1 / 4</div><p data-fr="employeurs a modifié ses critères de recrutement de diplômés en 2 ans." data-en="employers changed their graduate hiring criteria within 2 years.">employers changed their graduate hiring criteria within 2 years.</p><div class="src">GEURS Radar</div></div>
+      </div>
+    </section>
+  </div>
+
+  <!-- INDEX -->
+  <div class="wrap">
+    <section id="index">
+      <div class="sec-head">
+        <div><div class="eyebrow" data-fr="Toutes les ressources" data-en="All resources">All resources</div>
+          <h2 style="margin-top:8px" data-fr="Le référentiel" data-en="The repository">The repository</h2>
+          <p><span id="resultCount" class="num">·</span> <span data-fr="ressources · un contenu, une fiche, filtrable par facettes" data-en="resources · one item, one record, faceted filtering">resources · one item, one record, faceted filtering</span></p></div>
+        <a class="more" href="#" data-fr="Trier : Plus récent ▾" data-en="Sort: Most recent ▾">Sort: Most recent ▾</a>
+      </div>
+
+      <div class="index-layout">
+        <aside class="facets" aria-label="Filters">
+          <div class="facet"><h4 data-fr="Produit" data-en="Product">Product</h4>
+            <label><input type="checkbox">GEURS <span class="count">128</span></label>
+            <label><input type="checkbox">Digital Leaders <span class="count">64</span></label>
+            <label><input type="checkbox">GEURS Radar <span class="count">22</span></label>
+            <label><input type="checkbox"><span data-fr="Awards locaux" data-en="Local awards">Local awards</span> <span class="count">15</span></label>
+          </div>
+          <div class="facet"><h4 data-fr="Thème" data-en="Theme">Theme</h4>
+            <label><input type="checkbox"><span data-fr="Employabilité & insertion" data-en="Employability & workforce readiness">Employability &amp; workforce readiness</span> <span class="count">96</span></label>
+            <label><input type="checkbox"><span data-fr="Compétences & montée en compétences" data-en="Skills & upskilling">Skills &amp; upskilling</span> <span class="count">71</span></label>
+            <label><input type="checkbox"><span data-fr="Relations universités-employeurs" data-en="University-employer relations">University-employer relations</span> <span class="count">40</span></label>
+            <label><input type="checkbox"><span data-fr="Futur de l'enseignement supérieur" data-en="Future of higher education">Future of higher education</span> <span class="count">33</span></label>
+            <label><input type="checkbox"><span data-fr="Cursus & profil académique" data-en="Programs & academic profile">Programs &amp; academic profile</span> <span class="count">24</span></label>
+            <label><input type="checkbox"><span data-fr="Réputation & rayonnement" data-en="Reputation & global impact">Reputation &amp; global impact</span> <span class="count">52</span></label>
+          </div>
+          <div class="facet"><h4 data-fr="Année" data-en="Year">Year</h4>
+            <label><input type="checkbox">2026 <span class="count">41</span></label>
+            <label><input type="checkbox">2025 <span class="count">58</span></label>
+            <label><input type="checkbox">2024 <span class="count">49</span></label>
+          </div>
+          <div class="facet"><h4 data-fr="Accès" data-en="Access">Access</h4>
+            <label><input type="checkbox"><span data-fr="Public" data-en="Public">Public</span> <span class="count">186</span></label>
+            <label><input type="checkbox"><span data-fr="Réservé clients" data-en="Client-only">Client-only</span> <span class="count">43</span></label>
+          </div>
+        </aside>
+
+        <div class="grid" id="cardGrid">
+          <a class="card rcard" data-type="finding" href="#"><div class="top"><span class="badge t-finding">Finding</span></div><h3 data-fr="Top 5 des compétences réclamées par les recruteurs en 2026" data-en="Top 5 skills recruiters demand in 2026">Top 5 skills recruiters demand in 2026</h3><p data-fr="Chiffre-clé extrait de l'enquête mondiale." data-en="Key figure from the global survey.">Key figure from the global survey.</p><div class="foot"><span>GEURS · 2026</span></div></a>
+          <a class="card rcard" data-type="analyse" href="#"><div class="top"><span class="badge t-analyse" data-fr="Analyse" data-en="Analysis">Analysis</span><span class="lock" data-fr="🔒 Clients" data-en="🔒 Clients">🔒 Clients</span></div><h3 data-fr="Benchmark employabilité par région · Europe" data-en="Employability benchmark by region · Europe">Employability benchmark by region · Europe</h3><p data-fr="Étude comparative approfondie, 40 pages." data-en="In-depth comparative study, 40 pages.">In-depth comparative study, 40 pages.</p><div class="foot"><span>Market Intelligence · 2026</span></div></a>
+          <a class="card rcard" data-type="analyse" href="#"><div class="top"><span class="badge t-analyse" data-fr="Analyse" data-en="Analysis">Analysis</span></div><h3 data-fr="Pourquoi l'IA rebat les cartes de l'employabilité" data-en="Why AI is reshaping employability">Why AI is reshaping employability</h3><p data-fr="Analyse de fond : ce que le signal veut dire." data-en="In-depth analysis: what the signal means.">In-depth analysis: what the signal means.</p><div class="foot"><span>Digital Leaders · 2026</span></div></a>
+          <a class="card rcard" data-type="widget" href="#"><div class="top"><span class="badge t-widget">Widget</span></div><h3 data-fr="Comparateur de deux universités" data-en="Two-university comparator">Two-university comparator</h3><p data-fr="Outil interactif · intégrable sur votre site." data-en="Interactive tool · embeddable on your site.">Interactive tool · embeddable on your site.</p><div class="foot"><span data-fr="GEURS · en direct" data-en="GEURS · live">GEURS · live</span></div></a>
+          <a class="card rcard" data-type="article" href="#"><div class="top"><span class="badge t-article" data-fr="Article" data-en="Article">Article</span></div><h3 data-fr="Emerging × News Tank Awards : les lauréats 2026" data-en="Emerging × News Tank Awards: 2026 winners">Emerging × News Tank Awards: 2026 winners</h3><p data-fr="Coopération écoles-entreprises en France." data-en="School-business cooperation in France.">School-business cooperation in France.</p><div class="foot"><span data-fr="Awards locaux · 2026" data-en="Local awards · 2026">Local awards · 2026</span></div></a>
+          <a class="card rcard" data-type="widget" href="#"><div class="top"><span class="badge t-widget">Widget</span></div><h3 data-fr="Explorateur Digital Leaders · Top 150" data-en="Digital Leaders Top 150 explorer">Digital Leaders Top 150 explorer</h3><p data-fr="Filtrez le Top 150 par discipline, en direct." data-en="Filter the Top 150 by subject, live.">Filter the Top 150 by subject, live.</p><div class="foot"><span data-fr="Digital Leaders · en direct" data-en="Digital Leaders · live">Digital Leaders · live</span></div></a>
+          <a class="card rcard" data-type="finding" href="#"><div class="top"><span class="badge t-finding">Finding</span></div><h3 data-fr="La note d'employabilité moyenne a gagné 4 points" data-en="Average employability score up 4 points">Average employability score up 4 points</h3><p data-fr="Chiffre-clé, édition 2026." data-en="Key figure, 2026 edition.">Key figure, 2026 edition.</p><div class="foot"><span>GEURS · 2026</span></div></a>
+          <a class="card rcard" data-type="widget" href="#"><div class="top"><span class="badge t-widget">Widget</span></div><h3 data-fr="Carte interactive GEURS Radar" data-en="Interactive GEURS Radar map">Interactive GEURS Radar map</h3><p data-fr="Universités en forte demande, par champ." data-en="Universities in high demand, by field.">Universities in high demand, by field.</p><div class="foot"><span data-fr="GEURS Radar · en direct" data-en="GEURS Radar · live">GEURS Radar · live</span></div></a>
+          <a class="card rcard" data-type="article" href="#"><div class="top"><span class="badge t-article" data-fr="Article" data-en="Article">Article</span></div><h3 data-fr="Digital Leaders 2026 : le Top 150 dévoilé" data-en="Digital Leaders 2026: the Top 150 revealed">Digital Leaders 2026: the Top 150 revealed</h3><p data-fr="Analyse des mouvements du classement." data-en="A read on the ranking's moves.">A read on the ranking's moves.</p><div class="foot"><span>Digital Leaders · 2026</span></div></a>
+          <a class="card rcard" data-type="methodology" href="#"><div class="top"><span class="badge t-methodology" data-fr="Méthodologie" data-en="Methodology">Methodology</span></div><h3 data-fr="GEURS 2026 : méthodologie et sources de données" data-en="GEURS 2026: methodology and data sources">GEURS 2026: methodology and data sources</h3><p data-fr="Comment le classement est construit et pondéré." data-en="How the ranking is built and weighted.">How the ranking is built and weighted.</p><div class="foot"><span>GEURS · 2026 · PDF</span></div></a>
+          <a class="card rcard" data-type="methodology" href="#"><div class="top"><span class="badge t-methodology" data-fr="Méthodologie" data-en="Methodology">Methodology</span></div><h3 data-fr="Digital Leaders : méthodologie du Top 150" data-en="Digital Leaders: Top 150 methodology">Digital Leaders: Top 150 methodology</h3><p data-fr="Critères, périmètre et calcul du classement." data-en="Criteria, scope and how the ranking is computed.">Criteria, scope and how the ranking is computed.</p><div class="foot"><span>Digital Leaders · 2026 · PDF</span></div></a>
+          <div class="empty" id="emptyState" hidden data-fr="Aucune ressource pour ce filtre." data-en="No resources for this filter.">No resources for this filter.</div>
+        </div>
+      </div>
+    </section>
+  </div>
+
+  <!-- WIDGETS -->
+  <section class="tools">
+    <div class="wrap">
+      <div class="sec-head">
+        <div><div class="eyebrow" data-fr="Data & outils" data-en="Data & tools">Data &amp; tools</div>
+          <h2 style="margin-top:8px" data-fr="Widgets interactifs" data-en="Interactive widgets">Interactive widgets</h2>
+          <p data-fr="Des outils qu'on manipule, pas qu'on lit · et qu'on peut intégrer ailleurs (site institutionnel, presse)." data-en="Tools you operate, not just read · and can embed elsewhere (institutional site, press).">Tools you operate, not just read · and can embed elsewhere (institutional site, press).</p></div>
+        <a class="more" href="#" data-fr="Voir tous les outils →" data-en="See all tools →">See all tools →</a>
+      </div>
+      <div class="toolgrid">
+        <div class="tool">
+          <div class="preview"><div class="bars"><i style="height:40%"></i><i style="height:62%"></i><i style="height:48%"></i><i style="height:78%"></i><i style="height:58%"></i><i style="height:92%"></i><i style="height:70%"></i></div></div>
+          <div class="body"><h3 data-fr="Explorateur de classement" data-en="Ranking explorer">Ranking explorer</h3><p data-fr="Filtrez les 250 universités du GEURS par pays, secteur, compétence et édition." data-en="Filter the 250 GEURS universities by country, sector, skill and edition.">Filter the 250 GEURS universities by country, sector, skill and edition.</p>
+            <div class="tags"><span class="pill live" data-fr="● En direct" data-en="● Live">● Live</span><span class="pill" data-fr="Intégrable" data-en="Embeddable">Embeddable</span><span class="pill">GEURS</span></div></div>
+        </div>
+        <div class="tool">
+          <div class="preview"><div class="rows">
+            <div class="r"><b>1</b><span style="width:82%"></span></div>
+            <div class="r"><b>2</b><span style="width:64%"></span></div>
+            <div class="r"><b>3</b><span style="width:51%"></span></div>
+            <div class="r"><b>4</b><span style="width:38%"></span></div>
+          </div></div>
+          <div class="body"><h3 data-fr="Comparateur d'universités" data-en="University comparator">University comparator</h3><p data-fr="Mettez deux établissements côte à côte sur les critères des recruteurs." data-en="Put two institutions side by side on recruiters' criteria.">Put two institutions side by side on recruiters' criteria.</p>
+            <div class="tags"><span class="pill live" data-fr="● En direct" data-en="● Live">● Live</span><span class="pill" data-fr="Intégrable" data-en="Embeddable">Embeddable</span><span class="pill">GEURS</span></div></div>
+        </div>
+        <div class="tool">
+          <div class="preview"><div class="radar">
+            <svg width="120" height="104" viewBox="0 0 120 104" aria-hidden="true">
+              <polygon points="60,10 104,38 88,92 32,92 16,38" fill="none" stroke="var(--line)" stroke-width="1.5"/>
+              <polygon points="60,34 84,46 76,74 44,74 36,46" fill="rgba(31,95,208,.22)" stroke="var(--accent)" stroke-width="2"/>
+              <circle cx="60" cy="34" r="3" fill="var(--accent)"/><circle cx="84" cy="46" r="3" fill="var(--accent)"/><circle cx="76" cy="74" r="3" fill="var(--accent)"/>
+            </svg>
+          </div></div>
+          <div class="body"><h3>GEURS Radar</h3><p data-fr="Repérez les universités émergentes en forte demande sur un champ donné." data-en="Spot emerging universities in high demand within a given field.">Spot emerging universities in high demand within a given field.</p>
+            <div class="tags"><span class="pill live" data-fr="● En direct" data-en="● Live">● Live</span><span class="pill" data-fr="Intégrable" data-en="Embeddable">Embeddable</span><span class="pill">Radar</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCTS -->
+  <div class="wrap">
+    <section>
+      <div class="sec-head">
+        <div><div class="eyebrow" data-fr="Par produit" data-en="By product">By product</div>
+          <h2 style="margin-top:8px" data-fr="Explorer un univers" data-en="Explore a universe">Explore a universe</h2>
+          <p data-fr="Chaque univers est une vue préfiltrée du même référentiel · pas un silo à part." data-en="Each universe is a pre-filtered view of the same repository · not a separate silo.">Each universe is a pre-filtered view of the same repository · not a separate silo.</p></div>
+      </div>
+      <div class="prod-grid">
+        <a class="prod geurs" href="#">
+          <div class="eyebrow" data-fr="Univers" data-en="Universe">Universe</div><h3>GEURS</h3>
+          <p data-fr="Le classement de référence de l'employabilité, fondé exclusivement sur l'avis des recruteurs internationaux." data-en="The benchmark employability ranking, based solely on international recruiters' opinions.">The benchmark employability ranking, based solely on international recruiters' opinions.</p>
+          <div class="filt"><span>Findings</span><span>Analyses</span><span>Articles</span><span>Widgets</span><span>Methodology</span></div>
+        </a>
+        <a class="prod dl" href="#">
+          <div class="eyebrow" data-fr="Univers" data-en="Universe">Universe</div><h3>Digital Leaders</h3>
+          <p data-fr="Les universités qui excellent en IA, tech et transformation numérique · Top 150 par discipline." data-en="The universities excelling in AI, tech and digital transformation · Top 150 by subject.">The universities excelling in AI, tech and digital transformation · Top 150 by subject.</p>
+          <div class="filt"><span>Findings</span><span>Analyses</span><span>Articles</span><span>Widgets</span><span>Methodology</span></div>
+        </a>
+      </div>
+    </section>
+  </div>
+
+  <!-- CLIENT -->
+  <div class="wrap">
+    <section>
+      <div class="client">
+        <div>
+          <div class="eyebrow" style="color:rgba(255,255,255,.7)" data-fr="🔒 Réservé clients" data-en="🔒 Client-only">🔒 Client-only</div>
+          <h2 style="margin-top:10px" data-fr="Market intelligence & benchmarks sur mesure" data-en="Tailored market intelligence & benchmarks">Tailored market intelligence &amp; benchmarks</h2>
+          <p data-fr="Rapports de performance, analyses sectorielles et données par géographie, réservés aux institutions partenaires. Le référentiel gère nativement le contenu public et le contenu réservé." data-en="Performance reports, sector analyses and data by geography, reserved for partner institutions. The repository natively handles public and gated content.">Performance reports, sector analyses and data by geography, reserved for partner institutions. The repository natively handles public and gated content.</p>
+        </div>
+        <div class="cta">
+          <a href="#" class="btn primary" data-fr="Accéder à mon espace" data-en="Go to my account">Go to my account</a>
+          <a href="#" class="btn" data-fr="Demander un accès" data-en="Request access">Request access</a>
+        </div>
+      </div>
+    </section>
+  </div>
+</main>
+
+<footer><div class="wrap">
+  <div>
+    <strong style="color:var(--ink)" data-fr="Légende des types" data-en="Type legend">Type legend</strong> <span data-fr="· reprise du plan de site" data-en="· from the site plan">· from the site plan</span>
+    <div class="legend">
+      <span class="li"><span class="sw" style="background:var(--finding-bg);border:1px solid var(--finding-fg)"></span><span data-fr="Findings · chiffre-clé" data-en="Findings · key figure">Findings · key figure</span></span>
+      <span class="li"><span class="sw" style="background:var(--analyse-bg);border:1px solid var(--analyse-fg)"></span><span data-fr="Analyses · étude de fond" data-en="Analyses · in-depth study">Analyses · in-depth study</span></span>
+      <span class="li"><span class="sw" style="background:var(--article-bg);border:1px solid var(--article-fg)"></span><span data-fr="Articles · éditorial" data-en="Articles · editorial">Articles · editorial</span></span>
+      <span class="li"><span class="sw" style="background:var(--widget-bg);border:1px solid var(--widget-fg)"></span><span data-fr="Widgets · outil interactif" data-en="Widgets · interactive tool">Widgets · interactive tool</span></span>
+      <span class="li"><span class="sw" style="background:var(--method-bg);border:1px solid var(--method-fg)"></span><span data-fr="Methodology · note de méthode" data-en="Methodology · method note">Methodology · method note</span></span>
+    </div>
+  </div>
+  <div style="align-self:flex-end" data-fr="Maquette de travail · emerging.fr" data-en="Working mockup · emerging.fr">Working mockup · emerging.fr</div>
+</div></footer>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+
+<script>
+(function(){
+  function applyLang(l){
+    document.documentElement.lang=l;
+    document.querySelectorAll('[data-en]').forEach(function(el){
+      var t=el.getAttribute('data-'+l); if(t!==null) el.textContent=t;
+    });
+    document.querySelectorAll('[data-en-ph]').forEach(function(el){
+      var t=el.getAttribute('data-'+l+'-ph'); if(t!==null) el.setAttribute('placeholder',t);
+    });
+    document.querySelectorAll('.langbtn').forEach(function(b){
+      b.setAttribute('aria-pressed', String(b.getAttribute('data-lang')===l));
+    });
+  }
+  document.querySelectorAll('.langbtn').forEach(function(b){
+    b.addEventListener('click', function(){ applyLang(b.getAttribute('data-lang')); });
+  });
+
+  var chips=document.querySelectorAll('#typeChips .chip');
+  var cards=Array.prototype.slice.call(document.querySelectorAll('#cardGrid .rcard'));
+  var empty=document.getElementById('emptyState');
+  var count=document.getElementById('resultCount');
+  var total=192;
+  function apply(type){
+    var shown=0;
+    cards.forEach(function(c){
+      var ok = type==='all' || c.getAttribute('data-type')===type;
+      c.hidden=!ok; if(ok) shown++;
+    });
+    empty.hidden = shown>0;
+    count.textContent = type==='all' ? total : shown;
+  }
+  chips.forEach(function(ch){
+    ch.addEventListener('click', function(){
+      chips.forEach(function(x){x.setAttribute('aria-pressed','false')});
+      ch.setAttribute('aria-pressed','true');
+      apply(ch.getAttribute('data-type'));
+    });
+  });
+
+  applyLang('en');
+  apply('all');
+})();
+</script>
+
+</body>
+</html>
