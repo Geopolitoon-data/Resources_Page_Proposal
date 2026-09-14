@@ -4,38 +4,38 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="color-scheme" content="light">
-<style>:root{color-scheme:light}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<style>:root{color-scheme:light}body{margin:0;font:14px/1.5 Inter,Arial,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body><title>Hub Ressources Emerging</title>
 <meta name="description" content="Bilingual mockup of the emerging.fr Resources hub: one filterable repository · Findings, Analyses, Articles and Widgets, built on millions of employability data points.">
 <style>
   :root{
     color-scheme:light;
-    --bg:#eef1f6; --surface:#ffffff; --surface-2:#e9edf4; --line:#d7dee8;
-    --ink:#16213a; --text:#2c374a; --muted:#5f6c85; --accent:#1f5fd0; --accent-ink:#123f92;
-    --shadow:0 1px 2px rgba(22,33,58,.06),0 8px 24px rgba(22,33,58,.07);
-    --shadow-lift:0 2px 6px rgba(22,33,58,.10),0 18px 40px rgba(22,33,58,.13);
-    --finding-bg:#fbeecb; --finding-fg:#875600;
-    --analyse-bg:#e0e3fb; --analyse-fg:#2f38a6;
-    --article-bg:#fadfe4; --article-fg:#a5314e;
-    --widget-bg:#d9eddd; --widget-fg:#1c6a40;
-    --method-bg:#e3e7ef; --method-fg:#45526b;
-    --gate:#875600; --gate-bg:#fbeecb;
+    --bg:#f5eeea; --surface:#ffffff; --surface-2:#f2e9e3; --line:#e2dcd4;
+    --ink:#201913; --text:#3a322c; --muted:#7a736c; --accent:#ff4901; --accent-ink:#c93d00;
+    --shadow:0 1px 2px rgba(32,25,19,.05),0 8px 24px rgba(32,25,19,.07);
+    --shadow-lift:0 2px 6px rgba(32,25,19,.09),0 18px 40px rgba(32,25,19,.13);
+    --finding-bg:#fdf8e7; --finding-fg:#8a6a00;
+    --analyse-bg:#efdbff; --analyse-fg:#6a00c4;
+    --article-bg:#ffe6d6; --article-fg:#c23d00;
+    --widget-bg:#eef2d9; --widget-fg:#586a13;
+    --method-bg:#efedeb; --method-fg:#5c5857;
+    --gate:#8a6a00; --gate-bg:#fdf8e7;
   }
   /* Single light theme — automatic dark-mode switching removed on request */
 
   *{box-sizing:border-box}
   body{background:var(--bg); color:var(--text);
-    font-family:"Source Serif 4",Georgia,"Times New Roman",serif; line-height:1.6; -webkit-font-smoothing:antialiased}
-  h1,h2,h3,.ui{font-family:"Libre Franklin","Helvetica Neue",Arial,sans-serif}
+    font-family:Inter,Arial,sans-serif; line-height:1.6; -webkit-font-smoothing:antialiased}
+  h1,h2,h3,.ui{font-family:Inter,Arial,sans-serif}
   h1,h2,h3{color:var(--ink); text-wrap:balance; line-height:1.15; margin:0}
   a{color:inherit}
   .wrap{max-width:1160px; margin:0 auto; padding:0 24px}
-  .eyebrow{font-family:"Libre Franklin",sans-serif; text-transform:uppercase; letter-spacing:.14em;
+  .eyebrow{font-family:Inter,Arial,sans-serif; text-transform:uppercase; letter-spacing:.14em;
     font-size:11.5px; font-weight:700; color:var(--muted)}
   .num{font-variant-numeric:tabular-nums}
 
-  .memo-bar{background:var(--ink); color:#fff; font-family:"Libre Franklin",sans-serif; font-size:12.5px; letter-spacing:.02em}
+  .memo-bar{background:var(--ink); color:#fff; font-family:Inter,Arial,sans-serif; font-size:12.5px; letter-spacing:.02em}
   :root[data-theme="dark"] .memo-bar,:root:not([data-theme="light"]) .memo-bar{background:#05070d}
   .memo-bar .wrap{display:flex; gap:16px; align-items:center; justify-content:space-between; padding:9px 24px; flex-wrap:wrap}
   .memo-bar b{font-weight:700}
@@ -43,23 +43,23 @@
 
   header.site{background:var(--surface); border-bottom:1px solid var(--line); position:sticky; top:0; z-index:20}
   .site .wrap{display:flex; align-items:center; gap:24px; height:64px}
-  .logo{font-family:"Libre Franklin",sans-serif; font-weight:800; letter-spacing:-.01em; color:var(--ink); font-size:20px; display:flex; align-items:center; gap:9px}
+  .logo{font-family:Inter,Arial,sans-serif; font-weight:800; letter-spacing:-.01em; color:var(--ink); font-size:20px; display:flex; align-items:center; gap:9px}
   .logo .dot{width:11px; height:11px; border-radius:50%; background:var(--accent); display:inline-block}
   nav.main{display:flex; gap:22px; margin-left:6px}
-  nav.main a{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14.5px; color:var(--muted); text-decoration:none; padding:4px 0}
+  nav.main a{font-family:Inter,Arial,sans-serif; font-weight:600; font-size:14.5px; color:var(--muted); text-decoration:none; padding:4px 0}
   nav.main a.active{color:var(--ink); border-bottom:2px solid var(--accent)}
   .spacer{flex:1}
-  .lang{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; font-family:"Libre Franklin",sans-serif}
+  .lang{display:inline-flex; border:1px solid var(--line); border-radius:8px; overflow:hidden; font-family:Inter,Arial,sans-serif}
   .langbtn{border:0; background:var(--surface); color:var(--muted); font-weight:700; font-size:13px; padding:7px 12px; cursor:pointer}
   .langbtn[aria-pressed="true"]{background:var(--accent); color:#fff}
-  .btn{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14px; border-radius:8px; padding:9px 16px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:7px}
+  .btn{font-family:Inter,Arial,sans-serif; font-weight:600; font-size:14px; border-radius:8px; padding:9px 16px; border:1px solid var(--line); background:var(--surface); color:var(--ink); cursor:pointer; text-decoration:none; display:inline-flex; align-items:center; gap:7px}
   .btn.primary{background:var(--accent); border-color:var(--accent); color:#fff}
   .btn.small{padding:6px 12px; font-size:13px}
   a:focus-visible,button:focus-visible,input:focus-visible{outline:2.5px solid var(--accent); outline-offset:2px; border-radius:6px}
 
   .hero{padding:52px 0 34px}
   .hero .eyebrow{margin-bottom:14px}
-  .hero h1{font-size:clamp(40px,6vw,62px); font-weight:800; letter-spacing:-.02em}
+  .hero h1{font-family:"Varela Round",Arial,sans-serif; font-size:clamp(40px,6vw,60px); font-weight:400; letter-spacing:-.005em}
   .hero p.lede{font-size:19px; max-width:64ch; margin:16px 0 0; color:var(--text)}
   .searchrow{margin-top:26px; display:flex; gap:12px; flex-wrap:wrap; align-items:center}
   .search{flex:1; min-width:280px; display:flex; align-items:center; gap:10px; background:var(--surface); border:1px solid var(--line); border-radius:11px; padding:13px 16px; box-shadow:var(--shadow)}
@@ -68,8 +68,8 @@
   .search svg{flex:0 0 auto; color:var(--muted)}
 
   .chips{display:flex; gap:9px; flex-wrap:wrap; margin-top:20px; align-items:center}
-  .chips .lbl{font-family:"Libre Franklin",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-right:2px}
-  .chip{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:13.5px; cursor:pointer; border:1px solid var(--line); background:var(--surface); color:var(--text); padding:7px 13px; border-radius:999px; display:inline-flex; align-items:center; gap:7px}
+  .chips .lbl{font-family:Inter,Arial,sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin-right:2px}
+  .chip{font-family:Inter,Arial,sans-serif; font-weight:600; font-size:13.5px; cursor:pointer; border:1px solid var(--line); background:var(--surface); color:var(--text); padding:7px 13px; border-radius:999px; display:inline-flex; align-items:center; gap:7px}
   .chip .swatch{width:9px; height:9px; border-radius:50%}
   .chip[aria-pressed="true"]{border-color:var(--ink); color:var(--ink); background:var(--surface-2)}
   .chip.all[aria-pressed="true"]{background:var(--ink); color:var(--surface); border-color:var(--ink)}
@@ -78,9 +78,9 @@
   .sec-head{display:flex; align-items:flex-end; justify-content:space-between; gap:18px; margin-bottom:22px}
   .sec-head h2{font-size:26px; font-weight:800; letter-spacing:-.015em}
   .sec-head p{margin:6px 0 0; color:var(--muted); font-size:15px}
-  .sec-head a.more{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:14px; color:var(--accent-ink); text-decoration:none; white-space:nowrap}
+  .sec-head a.more{font-family:Inter,Arial,sans-serif; font-weight:600; font-size:14px; color:var(--accent-ink); text-decoration:none; white-space:nowrap}
 
-  .badge{font-family:"Libre Franklin",sans-serif; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:4px 9px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
+  .badge{font-family:Inter,Arial,sans-serif; font-weight:700; font-size:11px; text-transform:uppercase; letter-spacing:.06em; padding:4px 9px; border-radius:6px; display:inline-flex; align-items:center; gap:6px; white-space:nowrap}
   .t-finding{background:var(--finding-bg); color:var(--finding-fg)}
   .t-analyse{background:var(--analyse-bg); color:var(--analyse-fg)}
   .t-article{background:var(--article-bg); color:var(--article-fg)}
@@ -97,7 +97,7 @@
   .feat-main .body{padding:20px 22px 24px}
   .feat-main h3{font-size:25px; font-weight:800; margin-top:12px; letter-spacing:-.01em}
   .feat-main p{margin:9px 0 0; color:var(--text)}
-  .meta{font-family:"Libre Franklin",sans-serif; font-size:12.5px; color:var(--muted); margin-top:14px; display:flex; gap:12px; flex-wrap:wrap}
+  .meta{font-family:Inter,Arial,sans-serif; font-size:12.5px; color:var(--muted); margin-top:14px; display:flex; gap:12px; flex-wrap:wrap}
   .side-col{display:grid; gap:18px}
   .side-card{padding:18px 20px}
   .side-card h3{font-size:17.5px; font-weight:700; margin-top:10px}
@@ -105,13 +105,13 @@
 
   .findings{display:grid; grid-template-columns:repeat(4,1fr); gap:14px}
   .finding{background:var(--surface); border:1px solid var(--line); border-left:4px solid var(--finding-fg); border-radius:12px; padding:17px 18px; box-shadow:var(--shadow)}
-  .finding .big{font-family:"Libre Franklin",sans-serif; font-weight:800; font-size:34px; color:var(--ink); letter-spacing:-.02em; line-height:1}
+  .finding .big{font-family:Inter,Arial,sans-serif; font-weight:800; font-size:34px; color:var(--ink); letter-spacing:-.02em; line-height:1}
   .finding p{margin:9px 0 0; font-size:14px; color:var(--text)}
-  .finding .src{margin-top:11px; font-family:"Libre Franklin",sans-serif; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
+  .finding .src{margin-top:11px; font-family:Inter,Arial,sans-serif; font-size:11.5px; color:var(--muted); text-transform:uppercase; letter-spacing:.08em}
 
   .index-layout{display:grid; grid-template-columns:236px 1fr; gap:28px; align-items:start}
   .facets{position:sticky; top:80px; display:grid; gap:20px}
-  .facet h4{font-family:"Libre Franklin",sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 10px; font-weight:700}
+  .facet h4{font-family:Inter,Arial,sans-serif; font-size:12px; text-transform:uppercase; letter-spacing:.12em; color:var(--muted); margin:0 0 10px; font-weight:700}
   .facet label{display:flex; align-items:flex-start; gap:9px; font-size:14px; padding:4px 0; color:var(--text); cursor:pointer}
   .facet input{accent-color:var(--accent); width:15px; height:15px; margin-top:4px}
   .facet .count{margin-left:auto; font-size:12px; color:var(--muted); font-variant-numeric:tabular-nums; padding-left:8px}
@@ -120,9 +120,9 @@
   .rcard .top{display:flex; justify-content:space-between; align-items:center; gap:8px}
   .rcard h3{font-size:17px; font-weight:700; margin-top:13px; line-height:1.25}
   .rcard p{margin:8px 0 0; font-size:14px; color:var(--muted)}
-  .rcard .foot{margin-top:auto; padding-top:14px; font-family:"Libre Franklin",sans-serif; font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; align-items:center}
-  .lock{font-family:"Libre Franklin",sans-serif; font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--gate); background:var(--gate-bg); padding:3px 8px; border-radius:5px; display:inline-flex; gap:5px; align-items:center}
-  .empty{grid-column:1/-1; text-align:center; color:var(--muted); padding:40px; font-family:"Libre Franklin",sans-serif}
+  .rcard .foot{margin-top:auto; padding-top:14px; font-family:Inter,Arial,sans-serif; font-size:12px; color:var(--muted); display:flex; gap:10px; flex-wrap:wrap; align-items:center}
+  .lock{font-family:Inter,Arial,sans-serif; font-weight:700; font-size:10.5px; text-transform:uppercase; letter-spacing:.06em; color:var(--gate); background:var(--gate-bg); padding:3px 8px; border-radius:5px; display:inline-flex; gap:5px; align-items:center}
+  .empty{grid-column:1/-1; text-align:center; color:var(--muted); padding:40px; font-family:Inter,Arial,sans-serif}
 
   .tools{padding:44px 0; background:var(--surface-2); border-top:1px solid var(--line); border-bottom:1px solid var(--line)}
   .toolgrid{display:grid; grid-template-columns:repeat(3,1fr); gap:18px}
@@ -133,25 +133,25 @@
   .tool h3{font-size:17px; font-weight:700}
   .tool p{margin:7px 0 0; font-size:14px; color:var(--muted)}
   .tool .tags{margin-top:14px; display:flex; gap:8px; flex-wrap:wrap}
-  .pill{font-family:"Libre Franklin",sans-serif; font-weight:600; font-size:11px; padding:4px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); display:inline-flex; align-items:center; gap:5px}
+  .pill{font-family:Inter,Arial,sans-serif; font-weight:600; font-size:11px; padding:4px 9px; border-radius:999px; border:1px solid var(--line); color:var(--muted); display:inline-flex; align-items:center; gap:5px}
   .pill.live{color:var(--widget-fg); background:var(--widget-bg); border-color:transparent}
   .bars{display:flex; gap:7px; align-items:flex-end; height:100%}
   .bars i{flex:1; background:linear-gradient(180deg,var(--accent),var(--accent-ink)); border-radius:3px 3px 0 0; opacity:.9}
   .rows{display:grid; gap:7px}
-  .rows .r{display:flex; align-items:center; gap:8px; font-family:"Libre Franklin",sans-serif; font-size:11.5px; color:var(--muted)}
+  .rows .r{display:flex; align-items:center; gap:8px; font-family:Inter,Arial,sans-serif; font-size:11.5px; color:var(--muted)}
   .rows .r b{color:var(--ink); font-variant-numeric:tabular-nums; width:16px}
   .rows .r span{height:9px; border-radius:3px; background:var(--accent); display:block}
   .radar{position:absolute; inset:0; display:flex; align-items:center; justify-content:center}
 
   .prod-grid{display:grid; grid-template-columns:1fr 1fr; gap:18px}
   .prod{padding:26px; border-radius:16px; color:#fff; position:relative; overflow:hidden; text-decoration:none; display:block}
-  .prod.geurs{background:linear-gradient(135deg,#123f92,#1f5fd0)}
-  .prod.dl{background:linear-gradient(135deg,#0d5c4d,#12876f)}
+  .prod.geurs{background:linear-gradient(135deg,#02055d,#1839e2)}
+  .prod.dl{background:linear-gradient(135deg,#4b1f9e,#7e00e9)}
   .prod .eyebrow{color:rgba(255,255,255,.75)}
   .prod h3{color:#fff; font-size:24px; font-weight:800; margin-top:10px}
   .prod p{margin:9px 0 0; color:rgba(255,255,255,.9); font-size:15px; max-width:42ch}
   .prod .filt{margin-top:18px; display:flex; gap:8px; flex-wrap:wrap}
-  .prod .filt span{font-family:"Libre Franklin",sans-serif; font-size:12px; background:rgba(255,255,255,.16); padding:5px 11px; border-radius:999px}
+  .prod .filt span{font-family:Inter,Arial,sans-serif; font-size:12px; background:rgba(255,255,255,.16); padding:5px 11px; border-radius:999px}
 
   .client{background:var(--ink); color:#fff; border-radius:18px; padding:34px 36px; display:flex; gap:28px; align-items:center; justify-content:space-between; flex-wrap:wrap}
   :root[data-theme="dark"] .client,:root:not([data-theme="light"]) .client{border:1px solid var(--line)}
@@ -161,10 +161,10 @@
   .client .btn{background:transparent; border-color:rgba(255,255,255,.35); color:#fff}
   .client .btn.primary{background:#fff; color:var(--ink); border-color:#fff}
 
-  footer{padding:34px 0 60px; color:var(--muted); font-family:"Libre Franklin",sans-serif; font-size:13px}
+  footer{padding:34px 0 60px; color:var(--muted); font-family:Inter,Arial,sans-serif; font-size:13px}
   footer .wrap{display:flex; justify-content:space-between; gap:16px; flex-wrap:wrap; border-top:1px solid var(--line); padding-top:22px}
   .legend{display:flex; gap:16px; flex-wrap:wrap; margin-top:14px}
-  .legend .li{display:flex; align-items:center; gap:8px; font-family:"Libre Franklin",sans-serif; font-size:12.5px; color:var(--muted)}
+  .legend .li{display:flex; align-items:center; gap:8px; font-family:Inter,Arial,sans-serif; font-size:12.5px; color:var(--muted)}
   .legend .sw{width:12px; height:12px; border-radius:3px}
 
   @media(max-width:900px){
@@ -206,7 +206,7 @@
     <div class="hero">
       <div class="eyebrow" data-fr="Ressources · Recherche & données sur l'employabilité" data-en="Resources · Employability research & data">Resources · Employability research &amp; data</div>
       <h1 data-fr="Le hub de la donnée employabilité." data-en="The employability data hub.">The employability data hub.</h1>
-      <p class="lede" data-fr="Bâti sur des millions de points de données · 200 000+ profils d'étudiants et 150 000 employeurs interrogés en 2026. Explorez les Findings, Analyses, Articles et Widgets d'Emerging sur l'employabilité des universités du monde entier, depuis un hub unique et filtrable." data-en="Built on millions of data points · 200,000+ student profiles and 150,000 employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.">Built on millions of data points · 200,000+ student profiles and 150,000 employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.</p>
+      <p class="lede" data-fr="Bâti sur des millions de points de données · 200 000+ profils d'étudiants et 150 000+ employeurs interrogés en 2026. Explorez les Findings, Analyses, Articles et Widgets d'Emerging sur l'employabilité des universités du monde entier, depuis un hub unique et filtrable." data-en="Built on millions of data points · 200,000+ student profiles and 150,000+ employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.">Built on millions of data points · 200,000+ student profiles and 150,000+ employers surveyed in 2026. Explore Emerging's Findings, Analyses, Articles and Widgets on the employability of universities worldwide, all from one filterable hub.</p>
 
       <div class="searchrow">
         <label class="search">
@@ -383,8 +383,7 @@
     <section>
       <div class="sec-head">
         <div><div class="eyebrow" data-fr="Par produit" data-en="By product">By product</div>
-          <h2 style="margin-top:8px" data-fr="Explorer un univers" data-en="Explore a universe">Explore a universe</h2>
-          <p data-fr="Chaque univers est une vue préfiltrée du même référentiel · pas un silo à part." data-en="Each universe is a pre-filtered view of the same repository · not a separate silo.">Each universe is a pre-filtered view of the same repository · not a separate silo.</p></div>
+          <h2 style="margin-top:8px" data-fr="Explorer un univers" data-en="Explore a universe">Explore a universe</h2></div>
       </div>
       <div class="prod-grid">
         <a class="prod geurs" href="#">
@@ -408,7 +407,7 @@
         <div>
           <div class="eyebrow" style="color:rgba(255,255,255,.7)" data-fr="🔒 Réservé clients" data-en="🔒 Client-only">🔒 Client-only</div>
           <h2 style="margin-top:10px" data-fr="Market intelligence & benchmarks sur mesure" data-en="Tailored market intelligence & benchmarks">Tailored market intelligence &amp; benchmarks</h2>
-          <p data-fr="Rapports de performance, analyses sectorielles et données par géographie, réservés aux institutions partenaires. Le référentiel gère nativement le contenu public et le contenu réservé." data-en="Performance reports, sector analyses and data by geography, reserved for partner institutions. The repository natively handles public and gated content.">Performance reports, sector analyses and data by geography, reserved for partner institutions. The repository natively handles public and gated content.</p>
+          <p data-fr="Rapports de performance, analyses sectorielles et données par géographie, réservés aux institutions partenaires." data-en="Performance reports, sector analyses and data by geography, reserved for partner institutions.">Performance reports, sector analyses and data by geography, reserved for partner institutions.</p>
         </div>
         <div class="cta">
           <a href="#" class="btn primary" data-fr="Accéder à mon espace" data-en="Go to my account">Go to my account</a>
@@ -433,7 +432,7 @@
   <div style="align-self:flex-end" data-fr="Maquette de travail · emerging.fr" data-en="Working mockup · emerging.fr">Working mockup · emerging.fr</div>
 </div></footer>
 
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@400;600;700;800&family=Source+Serif+4:opsz,wght@8..60,400;8..60,600&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Varela+Round&display=swap">
 
 <script>
 (function(){
