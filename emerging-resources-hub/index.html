@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="en">
+<html lang="en" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<style>:root{color-scheme:light dark}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
+<meta name="color-scheme" content="light">
+<style>:root{color-scheme:light}body{margin:0;font:14px/1.5 system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}img{max-width:100%}[hidden]{display:none!important}</style>
 </head>
 <body><title>Hub Ressources Emerging</title>
 <meta name="description" content="Bilingual mockup of the emerging.fr Resources hub: one filterable repository · Findings, Analyses, Articles and Widgets, built on millions of employability data points.">
 <style>
   :root{
+    color-scheme:light;
     --bg:#eef1f6; --surface:#ffffff; --surface-2:#e9edf4; --line:#d7dee8;
     --ink:#16213a; --text:#2c374a; --muted:#5f6c85; --accent:#1f5fd0; --accent-ink:#123f92;
     --shadow:0 1px 2px rgba(22,33,58,.06),0 8px 24px rgba(22,33,58,.07);
@@ -20,32 +22,7 @@
     --method-bg:#e3e7ef; --method-fg:#45526b;
     --gate:#875600; --gate-bg:#fbeecb;
   }
-  @media (prefers-color-scheme:dark){
-    :root:not([data-theme="light"]){
-      --bg:#0e1422; --surface:#161d2e; --surface-2:#1d2638; --line:#2a3346;
-      --ink:#eef2f8; --text:#c6cfdc; --muted:#8b97ab; --accent:#6b98ff; --accent-ink:#9db8ff;
-      --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.35);
-      --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 20px 46px rgba(0,0,0,.5);
-      --finding-bg:#3a2f14; --finding-fg:#e8c274;
-      --analyse-bg:#1e2350; --analyse-fg:#adb7f6;
-      --article-bg:#3a1d27; --article-fg:#f2a8b9;
-      --widget-bg:#143020; --widget-fg:#8bdda7;
-      --method-bg:#232b3c; --method-fg:#b1bccd;
-      --gate:#e8c274; --gate-bg:#3a2f14;
-    }
-  }
-  :root[data-theme="dark"]{
-    --bg:#0e1422; --surface:#161d2e; --surface-2:#1d2638; --line:#2a3346;
-    --ink:#eef2f8; --text:#c6cfdc; --muted:#8b97ab; --accent:#6b98ff; --accent-ink:#9db8ff;
-    --shadow:0 1px 2px rgba(0,0,0,.3),0 10px 26px rgba(0,0,0,.35);
-    --shadow-lift:0 2px 6px rgba(0,0,0,.4),0 20px 46px rgba(0,0,0,.5);
-    --finding-bg:#3a2f14; --finding-fg:#e8c274;
-    --analyse-bg:#1e2350; --analyse-fg:#adb7f6;
-    --article-bg:#3a1d27; --article-fg:#f2a8b9;
-    --widget-bg:#143020; --widget-fg:#8bdda7;
-    --method-bg:#232b3c; --method-fg:#b1bccd;
-    --gate:#e8c274; --gate-bg:#3a2f14;
-  }
+  /* Single light theme — automatic dark-mode switching removed on request */
 
   *{box-sizing:border-box}
   body{background:var(--bg); color:var(--text);
